@@ -1,0 +1,20 @@
+{% extends "blog/base_with_nav.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <br>
+    <div class="row mb-4">
+        {% for p in gallery %}
+        <div class="col-xs-6 col-sm-6 col-md-4 mb-4 gallery">
+            <div class="card" data-aos="flip-down">
+                <a href="{{ p.image.url }}" data-lightbox='gallery' data-title="{{ p.caption }}">
+                    <img class="img-fluid z-depth-1-half" src="{{ p.image.url }}" alt="">
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+<br>
+{% endblock %}

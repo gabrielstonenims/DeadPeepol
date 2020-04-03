@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="{% static 'deadpeepol/images/dpp.ico' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'deadpeepol/css/bootstrap.min.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'deadpeepol/css/mdb.min.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'deadpeepol/css/swiper.min.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'deadpeepol/css/home.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'deadpeepol/css/gallery.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'deadpeepol/css/albums.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'deadpeepol/css/fontawesome-all.min.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'deadpeepol/css/animate.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'deadpeepol/css/lightbox.min.css'%}" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <title>
+    DP
+  </title>
+</head>
+
+<body class="deadpp">
+    {% include "blog/navbar.html" %}
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-sm-6 col-xs-6 col-md-6 mr-auto ml-auto mb-3 mt-3">
+          {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} animated bounce ">
+            {{message}}
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% block content %}
+  {% endblock %}
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <script src="{% static 'deadpeepol/js/jquery-3.4.1.min.js'%}"></script>
+  <script src="{% static 'deadpeepol/js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'deadpeepol/js/mdb.min.js'%}"></script>
+  <script src="{% static 'deadpeepol/js/swiper.min.js'%}"></script>
+  <script src="{% static 'deadpeepol/js/jscode.js'%}"></script>
+  <script src="{% static 'deadpeepol/js/code.js'%}"></script>
+  <script src="{% static 'deadpeepol/js/check_download.js'%}"></script>
+  <script src="{% static 'deadpeepol/js/detail_play.js'%}"></script>
+  <script src="{% static 'deadpeepol/js/candownloadplay.js'%}"></script>
+  <script src="{% static 'deadpeepol/js/fontawesome-all.min.js'%}"></script>
+  <script src="{% static 'deadpeepol/js/lightbox-plus-jquery.min.js'%}"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 400,
+      duration: 1000
+    });
+  </script>
+</body>
+
+</html>

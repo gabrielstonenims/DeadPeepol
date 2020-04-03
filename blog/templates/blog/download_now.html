@@ -1,0 +1,43 @@
+{% extends "blog/base_with_nav.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row mt-3">
+{% if not has_visited %}
+        <div class="col-xs-6 col-sm-6 col-md-8">
+            <h3 class="text-center">
+                {% if "_" in album.title %}
+                {% filter force_escape|cut:"_"%}
+                {{ album.title }}
+                {% endfilter %}
+                {% else %}
+                {{ album.title }}
+                {% endif %}
+            </h3>
+            <br>
+            <p class="text-center badge badge-danger mb-2 animated bounce">Please Make sure to dowload all your tracks before closing or refreshing this page.</p>
+            <br>
+                <ul class="list-group z-depth-1-half">
+                    {% for track in tracks %}
+                    <li class="list-group-item">
+                        <div id="candownload">
+                            <span class="badge badge-info mr-2">{{ forloop.counter }}</span>
+                            <a id="playthis" href="{{ track.track.url }}" title="{{ track.track_title }}">
+                                <img style="width: 30px;height: 30px;" class="mr-3"
+                                    src="{% static 'deadpeepol/images/playbuttons/play.png' %}" alt="">
+                                <audio controlsList="nodownload" src="{{ track.track.url }}" id='myaudio'></audio>
+                            </a>
+                            {{ track.track_title }} <span class="text-muted"
+                                style="float: right;">{{ track.track_duration }}</span>
+                        </div>
+                        <a style="float: right;" href="{{ track.track.url }}" download="{{ track.track_title }}"
+                            target="_blank"><i class="fas fa-download ml -3"></i></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+        </div>
+{% endif %}
+    </div>
+</div>
+
+{% endblock %}

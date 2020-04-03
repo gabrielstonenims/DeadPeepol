@@ -1,0 +1,54 @@
+{% extends "blog/base_with_nav.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+    <h3 class="text-center mb-3" style="font-weight: bold;">Albums </h3>
+    <br>
+    <div class="row mb-4">
+        {% for post in albums %}
+        <div class="col-xs-6 col-sm-6 col-md-3 mb-3">
+            <a href="{{ post.get_absolute_url }}">
+                <div class="album-poster imgBx mb-2">
+                    <img src="{{  post.poster.url }}" alt="Album poster" class="z-depth-1-half">
+                </div>
+                <div class="album-details details">
+                    <a id="album_title" class="mb-1" href="{{ post.get_absolute_url }}" title="{{ post.title }}">
+                        {{ post.title }}
+                    </a>
+                    <br>
+                    <small class="text-muted">{{ post.date_posted|date:"d b Y" }} </small>
+                    {% if  post.views >= 1000 %}
+                    <p><i class="fas fa-eye mr-2"></i>{{ post.views }}kb</p>
+                    {% else %}
+                    <p><i class="fas fa-eye mr-2"></i>{{ post.views }}</p>
+                    {% endif %}
+                    <span class="thistitle"></span>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- To change the direction of the modal animation change .right class -->
+    <br>
+    <hr class="my-4">
+    <br>
+    <h3 class="text-center mb-3">Listen with ease</h3>
+    <br>
+    <div class="row mb-4" data-aos="fade-in">
+        <div class="col-xs-6 col-sm-6 col-md-6 mb-4" data-aos="fade-right">
+            <div class="listeners mb-2">
+                <div class="listener-img">
+                    <img src="{% static 'deadpeepol/images/apple-airpods-left-side-earphones-2M0wBl8-600.jpg'%}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 mb-4" data-aos="fade-left">
+            <div class="listeners mb-2">
+                <div class="listener-img">
+                    <img class="animated bounce infinite" src="{% static 'deadpeepol/images/img.png'%}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}

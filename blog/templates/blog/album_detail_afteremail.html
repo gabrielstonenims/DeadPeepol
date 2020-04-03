@@ -1,0 +1,57 @@
+{% extends "blog/base_with_nav.html" %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container mt-4">
+    <div class="row mt-3">
+        
+        <div class="col-xs-6 col-sm-6 col-md-8">
+            <h3 class="text-center">
+                {{ album.title }}
+              
+                <span class="badge badge-info">{{ track_count }}</span>
+                <sub>
+                    <small class="ml-2">
+                        {% if track_count > 1 %}
+                        Tracks
+                        {% else %}
+                        Track
+                        {% endif %}
+                    </small>
+                </sub>
+            </h3>
+            <br>
+            <div class="purchase animated bounce mb-3">
+                <a href="{% url 'candownload' %}">Proceed</a>
+            </div>
+            <!-- <div class="purchase animated bounce mb-3">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="8HVWWW77JSQ56">
+                    <input type="submit" class="btn btn-sm btn-outline-success" value="Buy Album">
+                </form>
+            </div> -->
+            <p class="text-muted animated bounceInRight">Please we recommend using Google chrome or Opera for your downloads.</p>
+            <br>
+            <ul class="list-group z-depth-1-half">
+                {% for track in tracks %}
+                <li class="list-group-item">
+                    <div id="playbutt">
+                        <span class="badge badge-info mr-2">{{ forloop.counter }}</span>
+                        <a id="playthis" href="{{ track.track.url }}" title="{{ track.track_title }}">
+                            <img style="width: 30px;height: 30px;" class="mr-3"
+                                src="{% static 'deadpeepol/images/playbuttons/play.png' %}" alt="">
+                            <audio controlsList="nodownload" src="{{ track.track.url }}" id='myaudio'></audio>
+                        </a>
+                        {{ track.track_title }} <span class="text-muted"
+                            style="float: right;">{{ track.track_duration }}</span>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<br>
+
+{% endblock %}

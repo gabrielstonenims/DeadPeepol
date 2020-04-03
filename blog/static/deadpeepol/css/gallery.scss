@@ -1,0 +1,57 @@
+.gallery {
+    .card {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+
+        a {
+            img {
+                width: 100%;
+                height: 250px;
+                transition: 2s ease;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+// for nav
+
+.navbar{
+    a.navbar-brand{
+        animation: circle 3s ease forwards infinite;
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            &:hover{
+                transition: 2s ease;
+            }
+        }
+    }
+    li.nav-item{
+        a.nav-link{
+            color: white !important;
+            font-weight: bold;
+        
+        }
+    }
+}
+
+@keyframes circle{
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

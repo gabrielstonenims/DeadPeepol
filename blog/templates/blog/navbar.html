@@ -1,0 +1,48 @@
+{% load static %}
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgb(255, 170, 0);">
+<div class="container">
+  <!-- Navbar brand -->
+  <a class="navbar-brand" title="We are the DeadPeepol">
+    <img id="navlogo" class="img-fluid z-depth-1-half" src="{% static 'deadpeepol/images/ppp (copy).jpeg' %}" alt="">
+  </a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+    <!-- Links -->
+    <div class="container">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ml-4">
+          <a class="nav-link" href="{% url 'home' %}">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item ml-4">
+          <a class="nav-link" href="{% url 'albums' %}">Albums</a>
+        </li>
+        <li class="nav-item ml-4">
+          <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+        </li>
+        <li class="nav-item ml-4">
+          <a class="nav-link" href="{% url 'events' %}">Events</a>
+        </li>
+        <li class="nav-item ml-4">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item ml-4" >
+          <audio src="" id="audioPlayer"></audio>
+          <p class="nav-link" id="nowplaying"></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Collapsible content -->
+</div>
+</nav>
+<!--/.Navbar-->

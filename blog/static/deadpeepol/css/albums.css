@@ -1,0 +1,110 @@
+.imgBx {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.details {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details a {
+  font-weight: bold;
+  color: black;
+}
+
+.purchase {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.purchase a {
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.92) !important;
+  background-color: #ffaa00;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.purchase a:hover {
+  background: rgba(190, 131, 13, 0.747);
+  color: gray;
+}
+
+.butt {
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.92) !important;
+  background-color: #ffaa00;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.butt:hover {
+  background: rgba(216, 147, 10, 0.829);
+}
+
+#nowplaying {
+  font-weight: bold;
+  color: red;
+}
+
+.listeners {
+  padding: 20px;
+}
+
+.listeners .listener-img img {
+  max-width: 100%;
+}
+
+@-webkit-keyframes rotatepic {
+  0% {
+    -webkit-transform: rotateZ(0) translateX(180px);
+            transform: rotateZ(0) translateX(180px);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotatepic {
+  0% {
+    -webkit-transform: rotateZ(0) translateX(180px);
+            transform: rotateZ(0) translateX(180px);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+/*# sourceMappingURL=albums.css.map */
